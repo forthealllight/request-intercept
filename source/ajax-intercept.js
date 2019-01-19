@@ -67,7 +67,7 @@ function addEvent(node,type,handler){
   return false;
 }
 
-module.exports = function ajaxAttach(env) {
+const ajaxAttach = function (env) {
   env.XMLHttpRequest = newXMLHttpRequest(env.XMLHttpRequest);
   return {
     register: function (interceptor) {
@@ -85,3 +85,6 @@ module.exports = function ajaxAttach(env) {
   }
 
 }
+
+
+export default ajaxAttach

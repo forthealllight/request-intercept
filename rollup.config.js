@@ -21,6 +21,7 @@ export default {
      format:"cjs"
   },
   plugins: [
+    commonjs(),
     postcss({
       extensions:[".css","./scss"],
       plugins:[
@@ -35,23 +36,27 @@ export default {
         moduleDirectory: 'node_modules' // copywith the external
       }
     }),
-    commonjs(),
     babel({
+      presets: [
+       [
+         'es2015',
+         {
+           modules: false
+         }
+       ]
+     ],
       exclude: 'node_modules/**'
     }),
     replace({
       ENV:JSON.stringify(process.env.NODE_ENV||"development")//Global replace the ENV
     }),
     // production uglify
-    (process.env.NODE_ENV==="production"&&uglify({
-      compress:{
-        screw_ie8:true,
-        warning:false
-      },output: {
+    uglify({
+      output: {
         comments: false
       },
       sourceMap: false,
-    })),
+    }),
     serve({
       open:true,//open the browser
       contentBase:"./",

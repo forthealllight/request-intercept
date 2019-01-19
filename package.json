@@ -1,8 +1,8 @@
 {
-  "name": "rollup-ts",
+  "name": "req-interceptor",
   "version": "1.0.0",
-  "description": "a scaffold for ts using rollup",
-  "main": "index.js",
+  "description": "Interceptor library for all requests , both native fetch and native ajax( or XMLHttpRequest )",
+  "main": "dist/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c -w --env ENV:development",

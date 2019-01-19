@@ -30,7 +30,7 @@ function interceptor(fetch, ...args) {
   return promise;
 }
 
-module.exports = function fetchAttach(env) {
+const fetchAttach = function (env) {
   // Make sure fetch is avaibale in the given environment
   if (!env.fetch) {
     try {
@@ -60,3 +60,5 @@ module.exports = function fetchAttach(env) {
     }
   };
 };
+
+export default fetchAttach
