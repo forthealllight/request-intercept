@@ -51,9 +51,57 @@ fetch('http://google.com');
 unregister();
 ```
 if you want to clear all fetch listener array, you should：
- 
+```js
     fetchIntercept.clear()
-   
+``` 
+
+### Ajax(XMLHttpRequest) intercept
+
+```js
+  import { ajaxIntercept } from 'req-interceptor';
+  const unregister = ajaxIntercept.register({
+    requestAbout: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestError: function (xhr) {
+        // xhr is real instance of a request
+        
+    },
+    requestLoad: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestLoadStart: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestLoadEnd: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestProgress: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestOnreadyStateChange: function (xhr) {
+        // xhr is real instance of a request
+    },
+    requestTimeout: function (xhr) {
+        // xhr is real instance of a request
+    }
+});
+// Call ajax to see your interceptors in action.
+var client = new XMLHttpRequest();
+client.open("POST", url);
+client.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+client.send(JSON.stringify(data));
+  
+// Unregister your interceptor
+unregister();
+
+```
+
+if you want to clear all ajax listener array, you should：
+```js
+    fetchIntercept.clear()
+``` 
+
 
 ## License
 MIT
