@@ -62,6 +62,18 @@ if you want to clear all fetch listener array, you should：
   const unregister = ajaxIntercept.register({
     requestAbout: function (xhr) {
         // xhr is real instance of a request
+        //for example a post request ,the xhr includes
+        xhr = {
+          readyState: 4
+          response: "{"success":0}"
+          responseText: "{"success":0}"
+          responseType: ""
+          responseURL: "http://10.12.72.16:8080/extraInfo"
+          responseXML: null
+          status: 201
+          statusText: "Created"
+          timeout: 0
+        }
     },
     requestError: function (xhr) {
         // xhr is real instance of a request
