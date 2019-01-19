@@ -1,13 +1,3 @@
-# rollup-typescript-start
-using rollup to bulid a scaffolding for  typescript &amp; jsx and so on 
-
-
-## Install ##
-
-    npm install
-if you want use scss/less module,you  should:
-    npm install -d node-sass
-  
 ## run ##
 
  -  development
