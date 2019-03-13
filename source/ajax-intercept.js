@@ -21,28 +21,28 @@ let newXMLHttpRequest = function(Request){
       requestTimeout
     })=>{
       if(requestAbout){
-        addEvent(xhr,'abount',requestAbout.call(null,xhr));
+        addEvent(xhr,'abount',requestAbout.bind(null,xhr));
       }
       if(requestError){
-        addEvent(xhr,'error',requestError.call(null,xhr));
+        addEvent(xhr,'error',requestError.bind(null,xhr));
       }
       if(requestLoad){
-        addEvent(xhr,'load',requestLoad.call(null,xhr));
+        addEvent(xhr,'load',requestLoad.bind(null,xhr));
       }
       if(requestLoadStart){
-        addEvent(xhr,'loadstart',requestLoadStart.call(null,xhr));
+        addEvent(xhr,'loadstart',requestLoadStart.bind(null,xhr));
       }
       if(requestLoadEnd){
-        addEvent(xhr,'loadend',requestLoadEnd.call(null,xhr));
+        addEvent(xhr,'loadend',requestLoadEnd.bind(null,xhr));
       }
       if(requestProgress){
-        addEvent(xhr,'loadstart',requestProgress.call(null,xhr));
+        addEvent(xhr,'loadstart',requestProgress.bind(null,xhr));
       }
       if(requestOnreadyStateChange){
-        addEvent(xhr,'readystatechange',requestOnreadyStateChange.call(null,xhr));
+        addEvent(xhr,'readystatechange',requestOnreadyStateChange.bind(null,xhr));
       }
       if(requestTimeout){
-        addEvent(xhr,'timeout',requestTimeout.call(null,xhr));
+        addEvent(xhr,'timeout',requestTimeout.bind(null,xhr));
       }
     });
     return xhr;
